@@ -22,34 +22,18 @@ variable "vnets" {
     spoke4 = { name = "dev", address_space = "10.3.0.0/16" }
   }
 }
-locals {
-  subnets_hub = {
-    "snet-management" = {
-      address_prefix = "10.0.1.0/24"
-    },
-    "GatewaySubnet" = {
-      address_prefix = "10.0.15.224/27"
-    },
-    "snet-shared" = {
-      address_prefix = "10.0.4.0/22"
-    },
-    "AzureFirewallSubnet" = {
-      address_prefix = "10.0.15.0/26"
-    }
-  }
-  subnets_dev = {
-    "default" = {
-      address_prefix = "10.3.1.0/24"
-    }
-  }
-  subnets_prod = {
-    "default" = {
-      address_prefix = "10.1.1.0/24"
-    }
-  }
-  subnets_staging = {
-    "default" = {
-      address_prefix = "10.2.1.0/24"
-    }
-  }
+
+variable "subscription_id" {
+  description = "Azure Subscription ID"
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "Azure Tenant ID"
+  type        = string
+}
+
+variable "client_id" {
+  description = "Azure Client ID (Service Principal)"
+  type        = string
 }

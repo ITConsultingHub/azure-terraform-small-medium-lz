@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/opt/bash/bin/bash
 
 # Check for required commands
 for cmd in az jq terraform; do
